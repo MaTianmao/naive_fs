@@ -5,10 +5,10 @@
 #define FILE_H
 
 #include <stdio.h>
+#include <stdint.h>
 #include <pthread.h>
 #include <stdlib.h>
-#include "block.h"
-#include "inode.h"
+#define uint uint32_t
 #define DIRECT 10
 #define SINDIRECT (BSIZE / sizeof(uint))
 #define DINDIRECT (BSIZE / sizeof(uint)) * (BSIZE / sizeof(uint))

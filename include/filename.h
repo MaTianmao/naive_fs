@@ -4,6 +4,7 @@
 #ifndef FILENAME_H
 #define FILENAME_H
 #include <stdio.h>
+#include <stdint.h>
 #include <pthread.h>
 #include <stdlib.h>
 #include <string.h>
@@ -11,7 +12,8 @@
 #include "pathname.h"
 
 #define DSIZE 12
-
+#define uint uint32_t
+typedef struct inode inode;
 typedef struct{
     uint inum;
     char name[DSIZE];
