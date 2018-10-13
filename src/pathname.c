@@ -16,7 +16,7 @@ inode * path_to_inode(char *path, uint dirno){
     for(int i = 0; path[i] != 0; i++){
         if(path[i] == '/'){
             path[i] = 0;
-            rest = path[i+1];
+            rest = path + i + 1;
             break;
         }
     }
@@ -61,7 +61,7 @@ void next_dir(char *path, uint dirno, uint type){
     for(int i = 0; path[i] != 0; i++){
         if(path[i] == '/'){
             path[i] = 0;
-            rest = path[i+1];
+            rest = path + i + 1;
             break;
         }
     }
@@ -96,7 +96,7 @@ void handle_linkname(char *path, uint dirno, uint inum, int flag){
     for(int i = 0; path[i] != 0; i++){
         if(path[i] == '/'){
             path[i] = 0;
-            rest = path[i+1];
+            rest = path + i + 1;
             break;
         }
     }
@@ -149,7 +149,7 @@ void unlink(char *path){
     }
 }
 
-void remove(char *path){
+void m_remove(char *path){
     if(strlen(path) == 1 && *path == '/'){
         printf("can't remove root dir");
         return;
@@ -173,7 +173,7 @@ void remove(char *path){
     }
 }
 
-void rename(char *name1, char *name2){
+void m_rename(char *name1, char *name2){
     int i, j;
     for(i = strlen(name1) - 1; i >= 0; i--){
         if(name1[i] == '/') break;
@@ -182,8 +182,8 @@ void rename(char *name1, char *name2){
         if(name2[j] == '/') break;
     }
     if(i == j && strncmp(name1, name2, i) == 0){
-        char *s1 = name1[i + 1];
-        char *s2 = name2[j + 1];
+        char *s1 = name1 + i + 1;
+        char *s2 = name2 + j + 1;
         name1[i] = 0;
         inode *ino;
         if(*name1 == '/')

@@ -24,7 +24,7 @@ uint bmap(inode *ino, uint bn){
             a[bn] = addr = balloc();
             bp->flag |= DIRTY;
         }
-        freecach(bp);
+        freecache(bp);
         return addr;
     }
     bn -= SINDIRECT;
@@ -60,8 +60,10 @@ uint bmap(inode *ino, uint bn){
 }
 
 int readinode(inode *ino, char *dst, uint off, uint n){
-    if(off > ino->size || n < 0 || dst == NULL) 
-        panic("readinode: off out of range or n < 0 or dst is NULL");
+    if(off > ino->size || n < 0 || dst == NULL){
+        printf("readinode: off out of range or n < 0 or dst is NULL");
+        return 0;
+    }
     if(off + n > ino->size)
         n = ino->size - off;
     uint m = BSIZE;
@@ -80,11 +82,11 @@ int readinode(inode *ino, char *dst, uint off, uint n){
 int writeinode(inode *ino, char *dst, uint off, uint n){
     if(off > ino->size || n < 0 || dst == NULL){
         printf("writeinode");
-        return;
+        return 0;
     }
     if(off + n > 4 * 1024 * 1024){
         printf("out of 4MB");
-        return ;
+        return 0;
     }
     uint m = BSIZE;
     for(int i = 0; i < n; i += m, off += m, dst += m){

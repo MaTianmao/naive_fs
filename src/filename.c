@@ -4,7 +4,7 @@ inode* lookup(char *name, uint dirno){
     inode *dir = inode_number_to_inode(dirno);
     if(dir->type != 0) {
         printf("not a directory");
-        return ;
+        return NULL;
     }
     dirent dd;
     for(uint off = 0; off <= dir->size; off += sizeof(dirent)){
@@ -62,7 +62,7 @@ int dirempty(inode *dir){
     for(off = 0; off < dir->size; off += sizeof(dirent)){
         if(readinode(dir, (char *)&de, off, sizeof(dirent)) != sizeof(dirent)){
             printf("deletelink read");
-            return ;
+            return 0;
         }
         if(de.inum != 0){
             if(strncmp(de.name, "..", DSIZE) == 0)

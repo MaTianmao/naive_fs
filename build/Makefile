@@ -124,17 +124,17 @@ fs/fast:
 .PHONY : fs/fast
 
 #=============================================================================
-# Target rules for targets named test
+# Target rules for targets named tests
 
 # Build rule for target.
-test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test
-.PHONY : test
+tests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tests
+.PHONY : tests
 
 # fast build rule for target.
-test/fast:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-.PHONY : test/fast
+tests/fast:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
+.PHONY : tests/fast
 
 src/absolute_pathname.o: src/absolute_pathname.c.o
 
@@ -331,7 +331,7 @@ test/test.o: test/test.c.o
 
 # target to build an object file
 test/test.c.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test/test.c.o
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/test/test.c.o
 .PHONY : test/test.c.o
 
 test/test.i: test/test.c.i
@@ -340,7 +340,7 @@ test/test.i: test/test.c.i
 
 # target to preprocess a source file
 test/test.c.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test/test.c.i
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/test/test.c.i
 .PHONY : test/test.c.i
 
 test/test.s: test/test.c.s
@@ -349,7 +349,7 @@ test/test.s: test/test.c.s
 
 # target to generate assembly for a file
 test/test.c.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test/test.c.s
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/test/test.c.s
 .PHONY : test/test.c.s
 
 # Help Target
@@ -361,7 +361,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... fs"
-	@echo "... test"
+	@echo "... tests"
 	@echo "... src/absolute_pathname.o"
 	@echo "... src/absolute_pathname.i"
 	@echo "... src/absolute_pathname.s"

@@ -3,60 +3,46 @@
 
 CMakeFiles/fs.dir/src/absolute_pathname.c.o: ../include/absolute_pathname.h
 CMakeFiles/fs.dir/src/absolute_pathname.c.o: ../include/block.h
+CMakeFiles/fs.dir/src/absolute_pathname.c.o: ../include/common.h
 CMakeFiles/fs.dir/src/absolute_pathname.c.o: ../include/file.h
 CMakeFiles/fs.dir/src/absolute_pathname.c.o: ../include/filename.h
 CMakeFiles/fs.dir/src/absolute_pathname.c.o: ../include/inode.h
 CMakeFiles/fs.dir/src/absolute_pathname.c.o: ../include/pathname.h
-CMakeFiles/fs.dir/src/absolute_pathname.c.o: ../include/symbolic_link.h
 CMakeFiles/fs.dir/src/absolute_pathname.c.o: ../src/absolute_pathname.c
 
-CMakeFiles/fs.dir/src/block.c.o: ../include/absolute_pathname.h
 CMakeFiles/fs.dir/src/block.c.o: ../include/block.h
-CMakeFiles/fs.dir/src/block.c.o: ../include/file.h
-CMakeFiles/fs.dir/src/block.c.o: ../include/filename.h
-CMakeFiles/fs.dir/src/block.c.o: ../include/inode.h
-CMakeFiles/fs.dir/src/block.c.o: ../include/pathname.h
-CMakeFiles/fs.dir/src/block.c.o: ../include/symbolic_link.h
+CMakeFiles/fs.dir/src/block.c.o: ../include/common.h
 CMakeFiles/fs.dir/src/block.c.o: ../src/block.c
 
-CMakeFiles/fs.dir/src/file.c.o: ../include/absolute_pathname.h
 CMakeFiles/fs.dir/src/file.c.o: ../include/block.h
+CMakeFiles/fs.dir/src/file.c.o: ../include/common.h
 CMakeFiles/fs.dir/src/file.c.o: ../include/file.h
-CMakeFiles/fs.dir/src/file.c.o: ../include/filename.h
-CMakeFiles/fs.dir/src/file.c.o: ../include/inode.h
-CMakeFiles/fs.dir/src/file.c.o: ../include/pathname.h
-CMakeFiles/fs.dir/src/file.c.o: ../include/symbolic_link.h
 CMakeFiles/fs.dir/src/file.c.o: ../src/file.c
 
-CMakeFiles/fs.dir/src/filename.c.o: ../include/absolute_pathname.h
 CMakeFiles/fs.dir/src/filename.c.o: ../include/block.h
+CMakeFiles/fs.dir/src/filename.c.o: ../include/common.h
 CMakeFiles/fs.dir/src/filename.c.o: ../include/file.h
 CMakeFiles/fs.dir/src/filename.c.o: ../include/filename.h
 CMakeFiles/fs.dir/src/filename.c.o: ../include/inode.h
-CMakeFiles/fs.dir/src/filename.c.o: ../include/pathname.h
-CMakeFiles/fs.dir/src/filename.c.o: ../include/symbolic_link.h
 CMakeFiles/fs.dir/src/filename.c.o: ../src/filename.c
 
-CMakeFiles/fs.dir/src/inode.c.o: ../include/absolute_pathname.h
 CMakeFiles/fs.dir/src/inode.c.o: ../include/block.h
+CMakeFiles/fs.dir/src/inode.c.o: ../include/common.h
 CMakeFiles/fs.dir/src/inode.c.o: ../include/file.h
-CMakeFiles/fs.dir/src/inode.c.o: ../include/filename.h
 CMakeFiles/fs.dir/src/inode.c.o: ../include/inode.h
-CMakeFiles/fs.dir/src/inode.c.o: ../include/pathname.h
-CMakeFiles/fs.dir/src/inode.c.o: ../include/symbolic_link.h
 CMakeFiles/fs.dir/src/inode.c.o: ../src/inode.c
 
-CMakeFiles/fs.dir/src/pathname.c.o: ../include/absolute_pathname.h
 CMakeFiles/fs.dir/src/pathname.c.o: ../include/block.h
+CMakeFiles/fs.dir/src/pathname.c.o: ../include/common.h
 CMakeFiles/fs.dir/src/pathname.c.o: ../include/file.h
 CMakeFiles/fs.dir/src/pathname.c.o: ../include/filename.h
 CMakeFiles/fs.dir/src/pathname.c.o: ../include/inode.h
 CMakeFiles/fs.dir/src/pathname.c.o: ../include/pathname.h
-CMakeFiles/fs.dir/src/pathname.c.o: ../include/symbolic_link.h
 CMakeFiles/fs.dir/src/pathname.c.o: ../src/pathname.c
 
 CMakeFiles/fs.dir/src/symbolic_link.c.o: ../include/absolute_pathname.h
 CMakeFiles/fs.dir/src/symbolic_link.c.o: ../include/block.h
+CMakeFiles/fs.dir/src/symbolic_link.c.o: ../include/common.h
 CMakeFiles/fs.dir/src/symbolic_link.c.o: ../include/file.h
 CMakeFiles/fs.dir/src/symbolic_link.c.o: ../include/filename.h
 CMakeFiles/fs.dir/src/symbolic_link.c.o: ../include/inode.h
