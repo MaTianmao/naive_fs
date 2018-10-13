@@ -1,0 +1,4 @@
+/home/mashaonan/Desktop/course/fs/build/CMakeFiles/rebuild_cache.dir
+/home/mashaonan/Desktop/course/fs/build/CMakeFiles/edit_cache.dir
+/home/mashaonan/Desktop/course/fs/build/CMakeFiles/fs.dir
+/home/mashaonan/Desktop/course/fs/build/CMakeFiles/test.dir
