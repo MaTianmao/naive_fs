@@ -8,9 +8,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include "pathname.h"
+#include <stdint.h>
 #include "symbolic_link.h"
-
-uint rootdirno = 1;
+#define uint uint32_t
+__attribute__((weak)) uint rootdirno = 1;
 
 void makeroot();
 void cd(char *path);

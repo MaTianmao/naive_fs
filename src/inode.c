@@ -1,3 +1,4 @@
+#include "block.h"
 #include "inode.h"
 
 inode *inode_number_to_inode(uint inono){

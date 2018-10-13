@@ -1,4 +1,5 @@
 #include "file.h"
+#include "block.h"
 
 uint bmap(inode *ino, uint bn){
     uint addr;

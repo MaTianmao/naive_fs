@@ -12,6 +12,6 @@ add_library(fs include/block.h src/block.c include/file.h src/file.c
 
 set(TEST test/test.c)
 
-add_executable(test ${TEST})
+add_executable(mtest ${TEST})
 
-target_link_libraries(test fs)
+target_link_libraries(mtest fs)

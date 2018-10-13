@@ -9,11 +9,12 @@
 #include <stdlib.h>
 #include "file.h"
 #include "filename.h"
-
+typedef struct inodetable inodetable;
+#include "block.h"
 #define NINODE  BSIZE / sizeof(inode)
-typedef struct{
+struct inodetable {
     inode tlb[NINODE];
-}inodetable;
+};
 
 inodetable itlb;
 

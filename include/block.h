@@ -9,12 +9,12 @@
 #include <pthread.h>
 #include <stdlib.h>
 #include <string.h>
-#include "file.h"
 typedef unsigned int uint;
 #define BSIZE 4096
 #define BUFSIZE 4096
 #define DIRTY 1
 #define VALID 2
+#include "inode.h"
 char block_device[BSIZE]; //bitmap
 
 struct block{

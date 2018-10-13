@@ -149,7 +149,7 @@ void unlink(char *path){
     }
 }
 
-void remove(char *path){
+void m_remove(char *path){
     if(strlen(path) == 1 && *path == '/'){
         printf("can't remove root dir");
         return;
@@ -173,7 +173,7 @@ void remove(char *path){
     }
 }
 
-void rename(char *name1, char *name2){
+void m_rename(char *name1, char *name2){
     int i, j;
     for(i = strlen(name1) - 1; i >= 0; i--){
         if(name1[i] == '/') break;
