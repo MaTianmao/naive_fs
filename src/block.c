@@ -49,7 +49,7 @@ void createsb(superblock *sb){
 }
 
 void createbitmap(char *block_device){
-    memset(block_device, 0, sizeof(block_device));
+    memset(block_device, 0, sizeof(char) * BSIZE);
     block_device[0/8] |= (1 << (0 % 8)); //boot
     block_device[1/8] |= (1 << (1 % 8)); //sb
     block_device[2/8] |= (1 << (2 % 8)); //bitmap
