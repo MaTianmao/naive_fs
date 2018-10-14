@@ -27,8 +27,6 @@ stdint.h
 -
 string.h
 -
-math.h
--
 
 ../include/file.h
 common.h

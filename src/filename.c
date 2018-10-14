@@ -2,10 +2,12 @@
 
 inode* lookup(char *name, uint dirno){
     inode *dir = inode_number_to_inode(dirno);
-    if(dir->type != 0) {
-        printf("not a directory");
+    if(dir->type != 1) {
+        //printf("333");
+        printf("not a directory\n");
         return NULL;
     }
+    if(strlen(name) == 0) strncpy(name, ".", 2);
     dirent dd;
     for(uint off = 0; off <= dir->size; off += sizeof(dirent)){
         readinode(dir, (char *)&dd, off, sizeof(dirent));
@@ -19,15 +21,15 @@ inode* lookup(char *name, uint dirno){
 }
 
 void dirlink(inode *ino, char *name, uint inum){
-    if(lookup(name, ino->inum)!=NULL){
-        printf("exist");
+    if(lookup(name, ino->inum) != NULL){
+        printf("exist, can't link\n");
         return ;
     }
     int off;
     dirent de;
     for(off = 0; off < ino->size; off += sizeof(dirent)){
         if(readinode(ino, (char*)&de, off, sizeof(dirent)) != sizeof(dirent)){
-            printf("dirlink read");
+            printf("dirlink read wrong\n");
             return ;
         }
         if(de.inum == 0)
@@ -36,7 +38,7 @@ void dirlink(inode *ino, char *name, uint inum){
     strncpy(de.name, name, DSIZE);
     de.inum = inum;
     if(writeinode(ino, (char *)&de, off, sizeof(dirent))!= sizeof(dirent)){
-        printf("dirlink write");
+        printf("dirlink write wrong\n");
         return ;
     }
     
@@ -45,14 +47,20 @@ void dirlink(inode *ino, char *name, uint inum){
 void deletelink(inode* ino, char *name){
     int off;
     dirent de;
+    //printf("unlink %s %d\n",name, strlen(name));
     for(off = 0; off < ino->size; off += sizeof(dirent)){
         if(readinode(ino, (char *)&de, off, sizeof(dirent)) != sizeof(dirent)){
-            printf("deletelink read");
+            printf("deletelink read wrong\n");
             return ;
         }
         if(strncmp(name, de.name, DSIZE) == 0){
             de.inum = 0;
+            break;
         }
+    }
+    if(writeinode(ino, (char *)&de, off, sizeof(dirent))!= sizeof(dirent)){
+        printf("dirlink write wrong\n");
+        return ;
     }
 }
 
@@ -61,7 +69,7 @@ int dirempty(inode *dir){
     dirent de;
     for(off = 0; off < dir->size; off += sizeof(dirent)){
         if(readinode(dir, (char *)&de, off, sizeof(dirent)) != sizeof(dirent)){
-            printf("deletelink read");
+            printf("deletelink read wrong\n");
             return 0;
         }
         if(de.inum != 0){

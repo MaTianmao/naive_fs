@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "string.h": "c"
+        "string.h": "c",
+        "limits": "cpp",
+        "symbolic_link.h": "c"
     }
 }

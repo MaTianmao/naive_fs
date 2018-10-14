@@ -10,8 +10,9 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <string.h>
-#include <math.h>
 
+#define min(x, y) (x < y) ? x : y
+#define max(x, y) (x < y) ? y : x
 typedef unsigned int uint;
 #define BSIZE 4096
 #define BUFSIZE 4096
@@ -52,7 +53,7 @@ typedef struct block block;
 
 struct cache{
     block buf[BUFSIZE];
-    block *head;
+    block head;
 };
 typedef struct cache cache;
 
@@ -81,7 +82,7 @@ cache lrucache;
 char block_device[BSIZE]; //bitmap
 static uint rootdirno = 1;
 inode cwd;
-char *pwd;
+char pwd[100];
 inodetable itlb;
 
 #endif //COMMON_H

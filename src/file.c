@@ -105,11 +105,22 @@ int writeinode(inode *ino, char *dst, uint off, uint n){
     return n;
 }
 
+void inodesync(inode *ino){
+    for(int i = 0; i < ino->size;){
+        block *bp = getcache(bmap(ino, i / BSIZE));
+        if((bp->flag & DIRTY) == 1){
+            writeblock(bp);
+        }
+        i += bp->size;
+    }
+}
+
 inode *ialloc(uint type){
     for(int i = 1; i < NINODE; i++){
         if(itlb.tlb[i].type == 0){
             memset(&itlb.tlb[i], 0, sizeof(inode));
             itlb.tlb[i].type = type;
+            itlb.tlb[i].inum = i;
             writeinodetable(&itlb);
             return &itlb.tlb[i];
         }
