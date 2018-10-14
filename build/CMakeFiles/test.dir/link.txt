@@ -1,1 +1,0 @@
-/usr/bin/cc   -std=c99 -g   CMakeFiles/test.dir/test/test.c.o  -o test -rdynamic libfs.a 
